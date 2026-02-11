@@ -1,7 +1,8 @@
+![logo](https://github.com/AndreyTheDev/betterprint/blob/main/resources/logo-black.png)
 # BetterPrint
 wow pro print
 
-## why its cool
+### why its cool
 1. u can print cool text
 2. u can make cool things
 3. betterprint is cool
