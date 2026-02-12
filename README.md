@@ -2,6 +2,8 @@
 # BetterPrint
 wow pro print
 
+![preview](https://github.com/AndreyTheDev/betterprint/blob/main/resources/yeyeye.jpg)
+
 ### why its cool
 1. u can print cool text
 2. u can make cool things
