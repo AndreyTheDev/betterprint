@@ -1,3 +1,6 @@
+> [!CAUTION]
+> BetterPrint is **IN DEVELOPMENT** now and also i cant say this thing is stable (also if u spam images in console it **WILL** fuckin destroy ur fps)
+
 ![logo](https://github.com/AndreyTheDev/betterprint/blob/main/resources/logo-black.png)
 # BetterPrint
 wow pro print
