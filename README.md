@@ -9,5 +9,6 @@ wow pro print
 2. u can make cool things
 3. betterprint is cool
 
-##### inspired by https://scriptblox.com/script/Universal-Script-Change-output-color-16903
+#### also credits (cuz yeah)
+###### https://scriptblox.com/u/Verified (i stole his luarmor like loading)
 ###### also join my telegram channel -> t.me/SegmaNews
