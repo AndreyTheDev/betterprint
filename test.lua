@@ -8,8 +8,6 @@
     // also credits to verified (i stole his idea lmao)
     https://scriptblox.com/script/Universal-Script-Change-output-color-16903
 ]]
-local LogService = game:GetService("LogService")
-
 local BetterPrint = {
     Colors = {
         ["Default"] = "255,255,255",
@@ -87,9 +85,17 @@ local function IsStartsWithNum(str)
         return false
     end
 end
+local function generateAscii(text, font) --// we use https://asciified.thelicato.io/ api cuz im too lazy to make ascii arts generator in lua :P
+    local url = "https://asciified.thelicato.io/api/v2/ascii?text=".. string.gsub(text, " ", "+") .."&font=".. font
+    local response = request({
+        Url = url,
+        Method = "GET"
+    })
+    return "\n".. response.Body
+end
 
 --// functions
-function BetterPrint.print(text, color, size)
+function BetterPrint:print(text, color, size)
     if BetterPrint.Initiliazed ~= true then 
         print("use BetterPrint:Init() before call this!") 
         return
@@ -108,7 +114,7 @@ function BetterPrint.print(text, color, size)
     formatted = formatted .. '>' .. tostring(text) .. '</font>'
     print(formatted)
 end
-function BetterPrint.Loading(title, completeText, color, wait, symbol) --// credits to Verified (https://scriptblox.com/script/Universal-Script-Luarmor-like-loading-ig-18152)
+function BetterPrint:Loading(title, completeText, color, wait, symbol) --// credits to Verified (https://scriptblox.com/script/Universal-Script-Luarmor-like-loading-ig-18152)
     if BetterPrint.Initiliazed ~= true then 
         print("use BetterPrint:Init() before call this!") 
         return
@@ -150,7 +156,7 @@ function BetterPrint.Loading(title, completeText, color, wait, symbol) --// cred
     end
     loadingLabel.Text = string.format("<font color='rgb(%s)' size='15'>[%s] %s</font>", color, title, completeText)
 end
-function BetterPrint.printimage(assetid, scaletype, height, width)
+function BetterPrint:printimage(assetid, scaletype, height, width)
     if BetterPrint.Initiliazed ~= true then 
         print("use BetterPrint:Init() before call this!") 
         return
@@ -179,6 +185,22 @@ function BetterPrint.printimage(assetid, scaletype, height, width)
     image.Image = assetid
     image.ScaleType = scaletype
     image.Visible = false
+end
+function BetterPrint:printascii(text, color, font)
+    if not request then 
+        BetterPrint.print("ur exploit didnt support request so we cant generate ascii now :(")
+    end
+
+    text = text or "BetterPrint!"
+    font = font or "Standard"
+    color = color or "Default"
+    if IsStartsWithNum(color) then
+        color = color
+    else
+        color = BetterPrint.Colors[color]
+    end
+
+    BetterPrint.print(generateAscii("BetterPrint!", "Standard"), color)
 end
 
 function BetterPrint:Examples()
