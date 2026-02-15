@@ -232,3 +232,5 @@ function BetterPrint:Init(ShowCredits)
 
     BetterPrint.Initiliazed = true
 end
+
+return BetterPrint
