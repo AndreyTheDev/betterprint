@@ -234,7 +234,4 @@ function BetterPrint:Init(ShowCredits)
 
     BetterPrint.Initialized = true
 end
-
-return function()
-    return BetterPrint
-end
+return BetterPrint
