@@ -217,7 +217,9 @@ function BetterPrint:GetColors()
     return BetterPrint.Colors
 end
 function BetterPrint:Clear() --// TODO: remake ts sh!t func
-    print(("\n"):rep(50)) --// ts is best what i can make now 
+    print(("\n"):rep(50)) --// ts is best what i can make now ()
+    -- TODO: make real console cleanup by deleting all in console thats 
+    --       before i think print (like in printimage)
 end
 function BetterPrint:Init(ShowCredits)
     ShowCredits = ShowCredits or false --// please dont disable it :(
@@ -230,7 +232,7 @@ function BetterPrint:Init(ShowCredits)
     setupEnv()
     MakeTextRich() --// wow pro
 
-    BetterPrint.Initiliazed = true
+    BetterPrint.Initialized = true
 end
 
 return BetterPrint
