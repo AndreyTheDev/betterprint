@@ -22,7 +22,7 @@ local BetterPrint = {
         ["Yellow"] = "242,255,0"
     },
     Version = "v0.15",
-    Initialized = false,
+    Initiliazed = false,
 
     --// sys
     Container = nil
@@ -232,6 +232,7 @@ function BetterPrint:Init(ShowCredits)
     setupEnv()
     MakeTextRich() --// wow pro
 
-    BetterPrint.Initialized = true
+    BetterPrint.Initiliazed = true
 end
+
 return BetterPrint
