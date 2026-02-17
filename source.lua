@@ -162,8 +162,8 @@ function BetterPrint.printimage(assetid, height, width, scaletype)
     end
     assetid = assetid or "rbxassetid://11104447788"
     scaletype = scaletype or "Stretch"
-    height = height or 100
-    width = width or 100
+    height = height or 200
+    width = width or 200
     id = tostring(math.random(0, 10000000))
     print(" ".. id) --// for replacing
 
@@ -215,6 +215,16 @@ function BetterPrint:GetVersion()
 end
 function BetterPrint:GetColors()
     return BetterPrint.Colors
+end
+function BetterPrint:Intro()
+    if BetterPrint.Initiliazed ~= true then 
+        print("use BetterPrint:Init() before call this!") 
+        return
+    end
+    BetterPrint.printimage("rbxassetid://11104447788", 200, 500)
+    BetterPrint.print("BetterPrint is real wow pro")
+    BetterPrint.print("developed by andreythedevv")
+    BetterPrint.print("and also yea, it can print images :3", "150,150,150", 13)
 end
 function BetterPrint:Clear() --// TODO: remake ts sh!t func
     print(("\n"):rep(50)) --// ts is best what i can make now ()
