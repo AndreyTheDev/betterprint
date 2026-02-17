@@ -7,7 +7,7 @@
 
     // also credits to verified (i stole his idea and some code)
     https://scriptblox.com/script/Universal-Script-Change-output-color-16903
-]]
+]] 
 local BetterPrint = {
     Colors = {
         ["Default"] = "255,255,255",
