@@ -5,7 +5,7 @@
 
     github.com/andreythedev/betterprint
 
-    // also credits to verified (i stole his idea lmao)
+    // also credits to verified (i stole his idea and some code)
     https://scriptblox.com/script/Universal-Script-Change-output-color-16903
 ]]
 local LogService = game:GetService("LogService")
