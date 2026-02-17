@@ -52,5 +52,5 @@ BetterPrint.printascii("hii!", "Green", "Standard") --// {text}, {color from col
 ###### also yea i didnt add some features to guide cuz i didnt finish ts features :/
 
 #### also credits (cuz yeah)
-###### https://scriptblox.com/u/Verified (i stole his luarmor like loading)
+###### https://scriptblox.com/u/Verified (i stole his luarmor like loading and some code for lib)
 ###### also join my telegram channel -> t.me/SegmaNews
