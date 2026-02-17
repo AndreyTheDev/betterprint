@@ -19,7 +19,7 @@ okay lets start, so we need start init first cuz we need setup all things
 ```lua
 local BetterPrint = loadstring(game:HttpGet("https://raw.githubusercontent.com/AndreyTheDev/betterprint/main/source.lua"))()
 
-BetterPrint:Init()
+BetterPrint:Init() --// also if u want debug mode u can just use BetterPrint:Init(true)
 ```
 also we can print smth in console now!
 ```lua
