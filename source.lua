@@ -39,8 +39,9 @@ local BetterPrint = {
     },
     Version = "v0.15",
     Initiliazed = false,
+    Debug = false,
 
-    --// sys
+    --// objs
     Container = nil
 }
 
@@ -81,6 +82,9 @@ local function setupEnv()
     pcall(function() --// also throwing errs so i just throwing it away :3
         if game:GetService("CoreGui"):FindFirstChild("DevConsoleMaster"):FindFirstChild("BetterPrint") then
             BetterPrint.Container = game:GetService("CoreGui"):FindFirstChild("DevConsoleMaster"):FindFirstChild("BetterPrint")
+            if BetterPrint.Debug then
+                print("\n[betterprint.setupenv]:\n  betterprint.container already exists so we use it")
+            end
             return
         end
 
@@ -88,7 +92,10 @@ local function setupEnv()
         container.Name = "BetterPrint"
         container.Parent = game:GetService("CoreGui"):FindFirstChild("DevConsoleMaster")
 
-        BetterPrint.Container = container        
+        BetterPrint.Container = container  
+        if BetterPrint.Debug then
+            print("\n[betterprint.setupenv]:\n  betterprint.container doesnt exists so we create it rn\n  {%s}")
+        end      
     end)
 end
 local function IsStartsWithNum(str)
@@ -102,6 +109,9 @@ local function IsStartsWithNum(str)
 end
 local function generateAscii(text, font) --// we use https://asciified.thelicato.io/ api cuz im too lazy to make ascii arts generator in lua :P
     local url = "https://asciified.thelicato.io/api/v2/ascii?text=".. string.gsub(text, " ", "+") .."&font=".. font
+    if BetterPrint.Debug then
+        print("req ".. url)
+    end
     local response = request({
         Url = url,
         Method = "GET"
@@ -123,6 +133,9 @@ function BetterPrint.print(text, color, size)
     else
         color = BetterPrint.Colors[color]
     end
+    if BetterPrint.Debug then
+        print(string.format("\n[betterprint.print]:\n   txt: {%s} \n   color: {%s}\n   size: {%s}", text, color, size))
+    end
     
     --// print
     local formatted = "<font color='rgb(" .. color .. ")' size='" .. tostring(size) .. "'"
@@ -130,6 +143,7 @@ function BetterPrint.print(text, color, size)
     print(formatted)
 end
 function BetterPrint.Loading(title, completeText, color, wait, symbol) --// credits to Verified (https://scriptblox.com/script/Universal-Script-Luarmor-like-loading-ig-18152)
+    --// FIXME: fix some bugs & thing that progress doesnt saves :/
     if BetterPrint.Initiliazed ~= true then 
         print("use BetterPrint:Init() before call this!") 
         return
@@ -190,6 +204,9 @@ function BetterPrint.printimage(assetid, height, width, scaletype)
     if IsStartsWithNum(assetid) then
         assetid = "rbxassetid://".. assetid
     end
+    if BetterPrint.Debug then
+        print(string.format("\n[betterprint.printimage]:\n   image: {%s} \n   h: {%s}\n   w: {%s}\n   scaletype: {%s}\n\n   id: {%s}\n   ptfg: {%s}", assetid, height, width, scaletype, tostring(id - 1), tostring(math.ceil(height / 20))))
+    end
 
     --// we are making frame with fuckin img label, js like im default print (cuz we just use image instead of text)
     local image = Instance.new("ImageLabel")
@@ -213,6 +230,9 @@ function BetterPrint.printascii(text, color, font)
         color = color
     else
         color = BetterPrint.Colors[color]
+    end
+    if BetterPrint.Debug then
+        print(string.format("\n[betterprint.printascii]:\n   txt: {%s} \n   color: {%s}\n   font: {%s}", text, color, font))
     end
 
     BetterPrint.print(generateAscii(text, "Standard"), color)
@@ -246,12 +266,17 @@ function BetterPrint:Clear() --// TODO: remake ts sh!t func
     print(("\n"):rep(50)) --// ts is best what i can make now ()
     -- TODO: make real console cleanup by deleting all in console thats 
     --       before i think print (like in printimage)
+    --       also not in this month cuz fuckin school
 end
-function BetterPrint:Init(ShowCredits)
+function BetterPrint:Init(Debug, ShowCredits)
+    Debug = Debug or false
     ShowCredits = ShowCredits or false --// please dont disable it :(
     if ShowCredits then
         print("BetterPrint " .. BetterPrint.Version .. " | by andreythedevv")
         print("t.me/SegmaNews /!/ and also thanks dev of ts script https://scriptblox.com/script/Universal-Script-Change-output-color-16903 (cuz i stole his idea)")
+    end
+    if Debug then
+        BetterPrint.Debug = true
     end
 
     --// so we starting init here
