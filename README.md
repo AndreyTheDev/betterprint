@@ -36,6 +36,8 @@ BetterPrint:Init()
 BetterPrint.print("wow pro", "Red", 20) --// {text}, {color from colorbase or rgb (optional)}, size (optional)}
 ```
 soo can we print images? yep
+> [!WARNING]
+> if u see random numbers just try use another assetid or rejoin
 ```lua
 local BetterPrint = loadstring(game:HttpGet("https://raw.githubusercontent.com/AndreyTheDev/betterprint/main/source.lua"))()
 
