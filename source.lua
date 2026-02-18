@@ -1,5 +1,5 @@
 --[[
-    BetterPrint v0.15 | alpha
+    BetterPrint v0.16 | alpha
         developed by andreythedevv
         t.me/SegmaNews
 
@@ -35,7 +35,7 @@ local BetterPrint = {
         ["Gold"] = "255,215,0",
         ["Silver"] = "192,192,192",
     },
-    Version = "v0.15",
+    Version = "v0.16",
     Initiliazed = false,
     Debug = false,
 
@@ -242,8 +242,45 @@ function BetterPrint.what()
     end
     BetterPrint.printimage("rbxassetid://85702299740614", 200, 200)
 end
+--// idk what new i can make so i made ts
+function BetterPrint.info(service, text) 
+    service = service or "service i think"
+    text = text or "text i think"
 
---// System
+    print("[<font color='rgb(" .. "74,182,254" .. ")'>" .. "info" .. "</font>] <font color='rgb(" .. BetterPrint.Colors["Default"] .. ")'>[" .. service .. "]: ".. text .."</font>")
+end
+function BetterPrint.trace(service, text) --// js info but its named trace
+    service = service or "service i think"
+    text = text or "text i think"
+
+    print("[<font color='rgb(" .. "74,182,254" .. ")'>" .. "trace" .. "</font>] <font color='rgb(" .. BetterPrint.Colors["Default"] .. ")'>[" .. service .. "]: ".. text .."</font>")
+end
+function BetterPrint.debug(service, text) 
+    service = service or "service i think"
+    text = text or "text i think"
+
+    print("[<font color='rgb(" .. "122,177,99" .. ")'>" .. "debug" .. "</font>] <font color='rgb(" .. BetterPrint.Colors["Default"] .. ")'>[" .. service .. "]: ".. text .."</font>")
+end
+function BetterPrint.error(service, text) 
+    service = service or "service i think"
+    text = text or "text i think"
+
+    print("[<font color='rgb(" .. "255,106,87" .. ")'>" .. "error" .. "</font>] <font color='rgb(" .. BetterPrint.Colors["Default"] .. ")'>[" .. service .. "]: ".. text .."</font>")
+end
+function BetterPrint.warn(service, text) 
+    service = service or "service i think"
+    text = text or "text i think"
+
+    print("[<font color='rgb(" .. "255,216,67" .. ")'>" .. "warn" .. "</font>] <font color='rgb(" .. BetterPrint.Colors["Default"] .. ")'>[" .. service .. "]: ".. text .."</font>")
+end
+function BetterPrint.success(service, text) 
+    service = service or "service i think"
+    text = text or "text i think"
+
+    print("[<font color='rgb(" .. "59,255,0" .. ")'>" .. "success" .. "</font>] <font color='rgb(" .. BetterPrint.Colors["Default"] .. ")'>[" .. service .. "]: ".. text .."</font>")
+end
+
+--// betterprint
 function BetterPrint:GetVersion()
     return BetterPrint.Version
 end
