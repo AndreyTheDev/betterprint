@@ -51,6 +51,53 @@ local BetterPrint = loadstring(game:HttpGet("https://raw.githubusercontent.com/A
 BetterPrint:Init()
 BetterPrint.printascii("hii!", "Green", "Standard") --// {text}, {color from colorbase or rgb (optional}, {font (optional, also its font from asciified)}
 ```
+##
+also logs (idk im just bored so i made it)
+
+![preview](https://github.com/AndreyTheDev/betterprint/blob/main/resources/logs-preview.jpg)
+
+info
+```lua
+local BetterPrint = loadstring(game:HttpGet("https://raw.githubusercontent.com/AndreyTheDev/betterprint/main/source.lua"))()
+
+BetterPrint:Init()
+BetterPrint.info("BetterPrint", "wow pro") --// {service name}, {"text"}
+```
+trace (its just info lol)
+```lua
+local BetterPrint = loadstring(game:HttpGet("https://raw.githubusercontent.com/AndreyTheDev/betterprint/main/source.lua"))()
+
+BetterPrint:Init()
+BetterPrint.trace("BetterPrint", "wow pro") --// {service name}, {"text"}
+```
+debug
+```lua
+local BetterPrint = loadstring(game:HttpGet("https://raw.githubusercontent.com/AndreyTheDev/betterprint/main/source.lua"))()
+
+BetterPrint:Init()
+BetterPrint.debug("BetterPrint", "wow pro") --// {service name}, {"text"}
+```
+warn
+```lua
+local BetterPrint = loadstring(game:HttpGet("https://raw.githubusercontent.com/AndreyTheDev/betterprint/main/source.lua"))()
+
+BetterPrint:Init()
+BetterPrint.warn("BetterPrint", "wow pro") --// {service name}, {"text"}
+```
+error
+```lua
+local BetterPrint = loadstring(game:HttpGet("https://raw.githubusercontent.com/AndreyTheDev/betterprint/main/source.lua"))()
+
+BetterPrint:Init()
+BetterPrint.error("BetterPrint", "wow pro") --// {service name}, {"text"}
+```
+success
+```lua
+local BetterPrint = loadstring(game:HttpGet("https://raw.githubusercontent.com/AndreyTheDev/betterprint/main/source.lua"))()
+
+BetterPrint:Init()
+BetterPrint.success("BetterPrint", "wow pro") --// {service name}, {"text"}
+```
 ###### also yea i didnt add some features to guide cuz i didnt finish ts features :/
 
 #### also credits (cuz yeah)
